@@ -4,7 +4,7 @@ Documentation for configuration options. The majority of essential configuration
 
 ## Application
 
-Configuration options for the application are available in [`configs/app.config.ts`](app/src/configs/app.config.ts).
+Configuration options for the application are available in [configs/app.config.ts](app/src/configs/app.config.ts).
 
 ### Port
 
@@ -80,7 +80,7 @@ Environment variable: `DB_NAME`
 
 ## Email
 
-Configuration for email sending. Other configuration options are available in [`configs/email.config.ts`](app/src/configs/email.config.ts).
+Configuration for email sending. Other configuration options are available in [configs/email.config.ts](app/src/configs/email.config.ts).
 
 ### Host
 
@@ -104,12 +104,12 @@ Environment variable: `EMAIL_FROM`
 
 ## Logger
 
-Configuration options for logging are available in [`configs/logger.config.ts`](app/src/configs/logger.config.ts).
+Configuration options for logging are available in [configs/logger.config.ts](app/src/configs/logger.config.ts).
 
 ## Security
 
-Configuration options for security are available in [`configs/security.config.ts`](app/src/configs/security.config.ts).
+Configuration options for security are available in [configs/security.config.ts](app/src/configs/security.config.ts).
 
 ## Translations
 
-Configuration options for translations are available in [`configs/translations.config.ts`](app/src/configs/translations.config.ts).
+Configuration options for translations are available in [configs/translations.config.ts](app/src/configs/translations.config.ts).
