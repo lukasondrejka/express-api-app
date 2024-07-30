@@ -1,0 +1,15 @@
+services:
+
+  app:
+    image: node:20.15.1-alpine3.20
+    working_dir: /app
+    user: node
+    command: npm run dev
+    volumes:
+      - ./app:/app
+    ports:
+      - '${PORT}:${PORT}'
+
+#  database:
+#    ports:
+#      - '${DB_PORT}:5432'

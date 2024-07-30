@@ -1,0 +1,2721 @@
+{
+	"info": {
+		"name": "express-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Api",
+			"item": [
+				{
+					"name": "Health",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test if response has a valid status code\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Test if response is valid JSON\r",
+									"pm.test(\"Response is valid JSON\", function () {\r",
+									"    pm.response.to.be.json;\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/health",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost/api/users",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"users"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "@example.com",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "976"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d0-r+1+huLn4p1dmXMk01wWUKKVdf8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Jun 2023 12:49:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 4,\n    \"limit\": 10,\n    \"page\": 1,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"email\": \"admin@example.com\",\n            \"status\": \"active\",\n            \"firstName\": \"Admin\",\n            \"lastName\": \"Admin\",\n            \"primaryLanguage\": \"sk\",\n            \"isAdmin\": true,\n            \"createdAt\": \"2023-06-05T12:44:22.916Z\",\n            \"updatedAt\": \"2023-06-05T12:44:22.916Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": 2,\n            \"email\": \"shaun_stokes29@hotmail.com\",\n            \"status\": \"active\",\n            \"firstName\": \"Ayden\",\n            \"lastName\": \"Gorczany\",\n            \"primaryLanguage\": \"sk\",\n            \"isAdmin\": false,\n            \"createdAt\": \"2023-06-05T12:45:02.460Z\",\n            \"updatedAt\": \"2023-06-05T12:46:14.679Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": 3,\n            \"email\": \"viola.berge95@hotmail.com\",\n            \"status\": \"active\",\n            \"firstName\": \"Asa\",\n            \"lastName\": \"Kuphal\",\n            \"primaryLanguage\": \"sk\",\n            \"isAdmin\": false,\n            \"createdAt\": \"2023-06-05T12:46:43.532Z\",\n            \"updatedAt\": \"2023-06-05T12:46:51.234Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": 4,\n            \"email\": \"aliya_yundt@yahoo.com\",\n            \"status\": \"active\",\n            \"firstName\": \"Zoe\",\n            \"lastName\": \"Powlowski\",\n            \"primaryLanguage\": \"sk\",\n            \"isAdmin\": false,\n            \"createdAt\": \"2023-06-05T12:47:03.187Z\",\n            \"updatedAt\": \"2023-06-05T12:48:06.100Z\",\n            \"deletedAt\": null\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Registration",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// Generate name\r",
+									"pm.environment.set(\"userFirstName\", pm.variables.replaceIn(\"{{$randomFirstName}}\"));\r",
+									"pm.environment.set(\"userLastName\", pm.variables.replaceIn(\"{{$randomLastName}}\"));\r",
+									"\r",
+									"// Generate email\r",
+									"pm.environment.set(\"userEmail\", pm.variables.replaceIn(\"{{userFirstName}}.{{userLastName}}@example.com\").toLowerCase());\r",
+									"\r",
+									"// Save password\r",
+									"pm.environment.set(\"userPassword\", \"password\");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test if response has a valid status code\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"// Test if response is valid JSON\r",
+									"pm.test(\"Response is valid JSON\", function () {\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"// Parse the response JSON data\r",
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"// Store 'id' in environment variables for later use\r",
+									"pm.environment.set('userId', jsonData.id);\r",
+									"pm.environment.set('newUserId', jsonData.id);\r",
+									"\r",
+									"// Test if 'id' property exists and is a number\r",
+									"pm.test(\"'id' property exists and is a number\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"id\");\r",
+									"    pm.expect(jsonData.id).to.be.a(\"number\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'email' property exists and is a string\r",
+									"pm.test(\"'email' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"email\");\r",
+									"    pm.expect(jsonData.email).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'status' property exists and is a string\r",
+									"pm.test(\"'status' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"status\");\r",
+									"    pm.expect(jsonData.status).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'status' property is either 'active' or 'inactive'\r",
+									"pm.test(\"'status' property is either 'active' or 'inactive'\", function () {\r",
+									"    pm.expect(jsonData.status).to.be.oneOf([\"active\", \"inactive\"]);\r",
+									"});\r",
+									"\r",
+									"// Test if 'firstName' property exists and is a string\r",
+									"pm.test(\"'firstName' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"firstName\");\r",
+									"    pm.expect(jsonData.firstName).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'lastName' property exists and is a string\r",
+									"pm.test(\"'lastName' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"lastName\");\r",
+									"    pm.expect(jsonData.lastName).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'isAdmin' property exists and is a boolean\r",
+									"pm.test(\"'isAdmin' property exists and is a boolean\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"isAdmin\");\r",
+									"    pm.expect(jsonData.isAdmin).to.be.a(\"boolean\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'createdAt' property exists and is a string\r",
+									"pm.test(\"'createdAt' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"createdAt\");\r",
+									"    pm.expect(jsonData.createdAt).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'updatedAt' property exists and is a string\r",
+									"pm.test(\"'updatedAt' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"updatedAt\");\r",
+									"    pm.expect(jsonData.updatedAt).to.be.a(\"string\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"{{userEmail}}\",\r\n    \"password\": \"{{userPassword}}\",\r\n    \"firstName\": \"{{userFirstName}}\",\r\n    \"lastName\": \"{{userLastName}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/registration",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"registration"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Registration",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"andy.smith@example.com\",\r\n    \"password\": \"password\",\r\n    \"firstName\": \"Andy\",\r\n    \"lastName\": \"Smith\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/api/registration",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"registration"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.3"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Jun 2023 08:38:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "244"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f4-TluYxuLtoXkyD0bD2CUXr/ufMdw\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"email\": \"andy.smith@example.com\",\n    \"status\": \"inactive\",\n    \"firstName\": \"Andy\",\n    \"lastName\": \"Smith\",\n    \"isAdmin\": false,\n    \"createdAt\": \"2023-06-05T08:38:47.958Z\",\n    \"updatedAt\": \"2023-06-05T08:38:47.958Z\",\n    \"deletedAt\": null\n}"
+						},
+						{
+							"name": "Conflict",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"email@example.com\",\r\n    \"password\": \"Passw0rd\",\r\n    \"firstName\": \"First\",\r\n    \"lastName\": \"Last\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"registration"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "80"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"50-FERtxmf2w07nL9oijgxAD84j1jk\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Jun 2023 12:45:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 409,\n    \"name\": \"Conflict\",\n    \"message\": \"User with this email already exists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Activation",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Untested"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"\",\r\n    \"token\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/activation",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"activation"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Activation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"\",\r\n    \"token\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/api/activation",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"activation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Jun 2023 12:48:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Invalid Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"\",\r\n    \"token\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/activation",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"activation"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "81"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"51-A1AVkRi/D7pxsgfY0lcVOmA0J78\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Jul 2024 11:04:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"name\": \"Not Found\",\n    \"message\": \"Missing or invalid activation token\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test if response has a valid status code\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Set 'token' to an empty string if response does not exist\r",
+									"if (!pm.response) {\r",
+									"    pm.environment.set('token', '');\r",
+									"}\r",
+									"\r",
+									"// Test if response is valid JSON\r",
+									"pm.test(\"Response is valid JSON\", function () {\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"// Parse the response JSON data\r",
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"// Store 'token' from response in environment variable\r",
+									"pm.environment.set('token', jsonData.token);\r",
+									"\r",
+									"// Test if 'token' property exists and is a string\r",
+									"pm.test(\"'token' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"token\");\r",
+									"    pm.expect(jsonData.token).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'id' property exists and is a number\r",
+									"pm.test(\"'id' property exists and is a number\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"id\");\r",
+									"    pm.expect(jsonData.id).to.be.a(\"number\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'email' property exists and is a string\r",
+									"pm.test(\"'email' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"email\");\r",
+									"    pm.expect(jsonData.email).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'status' property exists and is a string\r",
+									"pm.test(\"'status' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"status\");\r",
+									"    pm.expect(jsonData.status).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'status' property is either 'active' or 'inactive'\r",
+									"pm.test(\"'status' property is either 'active' or 'inactive'\", function () {\r",
+									"    pm.expect(jsonData.status).to.be.oneOf([\"active\", \"inactive\"]);\r",
+									"});\r",
+									"\r",
+									"// Test if 'firstName' property exists and is a string\r",
+									"pm.test(\"'firstName' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"firstName\");\r",
+									"    pm.expect(jsonData.firstName).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'lastName' property exists and is a string\r",
+									"pm.test(\"'lastName' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"lastName\");\r",
+									"    pm.expect(jsonData.lastName).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'isAdmin' property exists and is a boolean\r",
+									"pm.test(\"'isAdmin' property exists and is a boolean\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"isAdmin\");\r",
+									"    pm.expect(jsonData.isAdmin).to.be.a(\"boolean\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'createdAt' property exists and is a string\r",
+									"pm.test(\"'createdAt' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"createdAt\");\r",
+									"    pm.expect(jsonData.createdAt).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'updatedAt' property exists and is a string\r",
+									"pm.test(\"'updatedAt' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"updatedAt\");\r",
+									"    pm.expect(jsonData.updatedAt).to.be.a(\"string\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"{{userEmail}}\",\r\n    \"password\": \"{{userPassword}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Admin Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/api/login",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "412"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19c-RWB/nUTVD8eP7FO6weUHcO7LgSg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Jun 2023 12:44:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTY4NTk2OTA2NSwiZXhwIjoxNjg2MDU1NDY1fQ.hCX2rHx77B99hbm88iUxRK7YXqTkurPRL9tPOjJ00wc\",\n    \"id\": 1,\n    \"email\": \"admin@example.com\",\n    \"status\": \"active\",\n    \"firstName\": \"Admin\",\n    \"lastName\": \"Admin\",\n    \"isAdmin\": true,\n    \"createdAt\": \"2023-06-05T12:44:22.916Z\",\n    \"updatedAt\": \"2023-06-05T12:44:22.916Z\",\n    \"deletedAt\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test if response has a valid status code\r",
+									"pm.test(\"Status code is 200\", function() {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Set 'token' to an empty string\r",
+									"pm.environment.set('token', '');"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/logout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost/api/logout",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.3"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jul 2024 15:23:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Admin Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test if response has a valid status code\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Set 'token' to an empty string if response does not exist\r",
+									"if (!pm.response) {\r",
+									"    pm.environment.set('token', '');\r",
+									"}\r",
+									"\r",
+									"// Test if response is valid JSON\r",
+									"pm.test(\"Response is valid JSON\", function () {\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"// Parse the response JSON data\r",
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"// Store 'token' from response in environment variable\r",
+									"pm.environment.set('token', jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Admin Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/api/login",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "412"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19c-RWB/nUTVD8eP7FO6weUHcO7LgSg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Jun 2023 12:44:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTY4NTk2OTA2NSwiZXhwIjoxNjg2MDU1NDY1fQ.hCX2rHx77B99hbm88iUxRK7YXqTkurPRL9tPOjJ00wc\",\n    \"id\": 1,\n    \"email\": \"admin@example.com\",\n    \"status\": \"active\",\n    \"firstName\": \"Admin\",\n    \"lastName\": \"Admin\",\n    \"isAdmin\": true,\n    \"createdAt\": \"2023-06-05T12:44:22.916Z\",\n    \"updatedAt\": \"2023-06-05T12:44:22.916Z\",\n    \"deletedAt\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Password reset request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test if response has a valid status code\r",
+									"pm.test(\"Status code is 200\", function() {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/password-reset-request",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"password-reset-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password reset",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Untested"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"token\": \"\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/password-reset",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"password-reset"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test if response has a valid status code\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Test if response is valid JSON\r",
+									"pm.test(\"Response is valid JSON\", function () {\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"// Parse the response JSON\r",
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"// Test if 'count' property exists and is a number\r",
+									"pm.test(\"'count' property exists and is a number\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"count\");\r",
+									"    pm.expect(jsonData.count).to.be.a(\"number\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'limit' property exists and is a number\r",
+									"pm.test(\"'limit' property exists and is a number\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"limit\");\r",
+									"    pm.expect(jsonData.limit).to.be.a(\"number\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'page' property exists and is a number\r",
+									"pm.test(\"'page' property exists and is a number\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"page\");\r",
+									"    pm.expect(jsonData.page).to.be.a(\"number\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'data' property exists and is an array\r",
+									"pm.test(\"'data' property exists and is an array\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"data\").that.is.an(\"array\");\r",
+									"});\r",
+									"\r",
+									"// Run further tests only if 'data' array is not empty\r",
+									"if (jsonData.data.length > 0) {\r",
+									"    const firstItem = jsonData.data[0];\r",
+									"\r",
+									"    // Test if 'id' property exists and is a number\r",
+									"    pm.test(\"'id' property exists and is a number\", function () {\r",
+									"        pm.expect(firstItem).to.have.property(\"id\");\r",
+									"        pm.expect(firstItem.id).to.be.a(\"number\");\r",
+									"    });\r",
+									"\r",
+									"    // Test if 'email' property exists and is a string\r",
+									"    pm.test(\"'email' property exists and is a string\", function () {\r",
+									"        pm.expect(firstItem).to.have.property(\"email\");\r",
+									"        pm.expect(firstItem.email).to.be.a(\"string\");\r",
+									"    });\r",
+									"\r",
+									"    // Test if 'status' property exists and is a string\r",
+									"    pm.test(\"'status' property exists and is a string\", function () {\r",
+									"        pm.expect(firstItem).to.have.property(\"status\");\r",
+									"        pm.expect(firstItem.status).to.be.a(\"string\");\r",
+									"    });\r",
+									"\r",
+									"    // Test if 'status' property is either 'active' or 'inactive'\r",
+									"    pm.test(\"'status' property is either 'active' or 'inactive'\", function () {\r",
+									"        pm.expect(firstItem.status).to.be.oneOf([\"active\", \"inactive\"]);\r",
+									"    });\r",
+									"\r",
+									"    // Test if 'firstName' property exists and is a string\r",
+									"    pm.test(\"'firstName' property exists and is a string\", function () {\r",
+									"        pm.expect(firstItem).to.have.property(\"firstName\");\r",
+									"        pm.expect(firstItem.firstName).to.be.a(\"string\");\r",
+									"    });\r",
+									"\r",
+									"    // Test if 'lastName' property exists and is a string\r",
+									"    pm.test(\"'lastName' property exists and is a string\", function () {\r",
+									"        pm.expect(firstItem).to.have.property(\"lastName\");\r",
+									"        pm.expect(firstItem.lastName).to.be.a(\"string\");\r",
+									"    });\r",
+									"\r",
+									"    // Test if 'isAdmin' property exists and is a boolean\r",
+									"    pm.test(\"'isAdmin' property exists and is a boolean\", function () {\r",
+									"        pm.expect(firstItem).to.have.property(\"isAdmin\");\r",
+									"        pm.expect(firstItem.isAdmin).to.be.a(\"boolean\");\r",
+									"    });\r",
+									"\r",
+									"    // Test if 'createdAt' property exists and is a string\r",
+									"    pm.test(\"'createdAt' property exists and is a string\", function () {\r",
+									"        pm.expect(firstItem).to.have.property(\"createdAt\");\r",
+									"        pm.expect(firstItem.createdAt).to.be.a(\"string\");\r",
+									"    });\r",
+									"\r",
+									"    // Test if 'updatedAt' property exists and is a string\r",
+									"    pm.test(\"'updatedAt' property exists and is a string\", function () {\r",
+									"        pm.expect(firstItem).to.have.property(\"updatedAt\");\r",
+									"        pm.expect(firstItem.updatedAt).to.be.a(\"string\");\r",
+									"    });\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "@example.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost/api/users",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"users"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "@example.com",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "976"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d0-r+1+huLn4p1dmXMk01wWUKKVdf8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Jun 2023 12:49:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 4,\n    \"limit\": 10,\n    \"page\": 1,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"email\": \"admin@example.com\",\n            \"status\": \"active\",\n            \"firstName\": \"Admin\",\n            \"lastName\": \"Admin\",\n            \"primaryLanguage\": \"sk\",\n            \"isAdmin\": true,\n            \"createdAt\": \"2023-06-05T12:44:22.916Z\",\n            \"updatedAt\": \"2023-06-05T12:44:22.916Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": 2,\n            \"email\": \"shaun_stokes29@hotmail.com\",\n            \"status\": \"active\",\n            \"firstName\": \"Ayden\",\n            \"lastName\": \"Gorczany\",\n            \"primaryLanguage\": \"sk\",\n            \"isAdmin\": false,\n            \"createdAt\": \"2023-06-05T12:45:02.460Z\",\n            \"updatedAt\": \"2023-06-05T12:46:14.679Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": 3,\n            \"email\": \"viola.berge95@hotmail.com\",\n            \"status\": \"active\",\n            \"firstName\": \"Asa\",\n            \"lastName\": \"Kuphal\",\n            \"primaryLanguage\": \"sk\",\n            \"isAdmin\": false,\n            \"createdAt\": \"2023-06-05T12:46:43.532Z\",\n            \"updatedAt\": \"2023-06-05T12:46:51.234Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": 4,\n            \"email\": \"aliya_yundt@yahoo.com\",\n            \"status\": \"active\",\n            \"firstName\": \"Zoe\",\n            \"lastName\": \"Powlowski\",\n            \"primaryLanguage\": \"sk\",\n            \"isAdmin\": false,\n            \"createdAt\": \"2023-06-05T12:47:03.187Z\",\n            \"updatedAt\": \"2023-06-05T12:48:06.100Z\",\n            \"deletedAt\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test if response has a valid status code\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Test if response is valid JSON\r",
+									"pm.test(\"Response is valid JSON\", function () {\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"// Parse the response JSON\r",
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"// Test if 'id' property exists and is a number\r",
+									"pm.test(\"'id' property exists and is a number\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"id\");\r",
+									"    pm.expect(jsonData.id).to.be.a(\"number\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'email' property exists and is a string\r",
+									"pm.test(\"'email' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"email\");\r",
+									"    pm.expect(jsonData.email).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'status' property exists and is a string\r",
+									"pm.test(\"'status' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"status\");\r",
+									"    pm.expect(jsonData.status).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'status' property is either 'active' or 'inactive'\r",
+									"pm.test(\"'status' property is either 'active' or 'inactive'\", function () {\r",
+									"    pm.expect(jsonData.status).to.be.oneOf([\"active\", \"inactive\"]);\r",
+									"});\r",
+									"\r",
+									"// Test if 'firstName' property exists and is a string\r",
+									"pm.test(\"'firstName' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"firstName\");\r",
+									"    pm.expect(jsonData.firstName).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'lastName' property exists and is a string\r",
+									"pm.test(\"'lastName' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"lastName\");\r",
+									"    pm.expect(jsonData.lastName).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'isAdmin' property exists and is a boolean\r",
+									"pm.test(\"'isAdmin' property exists and is a boolean\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"isAdmin\");\r",
+									"    pm.expect(jsonData.isAdmin).to.be.a(\"boolean\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'createdAt' property exists and is a string\r",
+									"pm.test(\"'createdAt' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"createdAt\");\r",
+									"    pm.expect(jsonData.createdAt).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'updatedAt' property exists and is a string\r",
+									"pm.test(\"'updatedAt' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"updatedAt\");\r",
+									"    pm.expect(jsonData.updatedAt).to.be.a(\"string\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{newUserId}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost/api/users/:id",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "295"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"127-1znbZEAjtFXyeGGVW1JJqQGxRW0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Jun 2023 12:49:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"email\": \"admin@example.com\",\n    \"status\": \"active\",\n    \"firstName\": \"Admin\",\n    \"lastName\": \"Admin\",\n    \"primaryLanguage\": \"sk\",\n    \"isAdmin\": true,\n    \"createdAt\": \"2023-06-05T12:44:22.916Z\",\n    \"updatedAt\": \"2023-06-05T12:44:22.916Z\",\n    \"deletedAt\": null,\n}"
+						}
+					]
+				},
+				{
+					"name": "Get current user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test if response has a valid status code\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Test if response is valid JSON\r",
+									"pm.test(\"Response is valid JSON\", function () {\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"// Parse the response JSOmN\r",
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"// Test if 'id' property exists and is a number\r",
+									"pm.test(\"'id' property exists and is a number\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"id\");\r",
+									"    pm.expect(jsonData.id).to.be.a(\"number\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'email' property exists and is a string\r",
+									"pm.test(\"'email' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"email\");\r",
+									"    pm.expect(jsonData.email).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'status' property exists and is a string\r",
+									"pm.test(\"'status' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"status\");\r",
+									"    pm.expect(jsonData.status).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'status' property is either 'active' or 'inactive'\r",
+									"pm.test(\"'status' property is either 'active' or 'inactive'\", function () {\r",
+									"    pm.expect(jsonData.status).to.be.oneOf([\"active\", \"inactive\"]);\r",
+									"});\r",
+									"\r",
+									"// Test if 'firstName' property exists and is a string\r",
+									"pm.test(\"'firstName' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"firstName\");\r",
+									"    pm.expect(jsonData.firstName).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'lastName' property exists and is a string\r",
+									"pm.test(\"'lastName' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"lastName\");\r",
+									"    pm.expect(jsonData.lastName).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'isAdmin' property exists and is a boolean\r",
+									"pm.test(\"'isAdmin' property exists and is a boolean\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"isAdmin\");\r",
+									"    pm.expect(jsonData.isAdmin).to.be.a(\"boolean\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'createdAt' property exists and is a string\r",
+									"pm.test(\"'createdAt' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"createdAt\");\r",
+									"    pm.expect(jsonData.createdAt).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'updatedAt' property exists and is a string\r",
+									"pm.test(\"'updatedAt' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"updatedAt\");\r",
+									"    pm.expect(jsonData.updatedAt).to.be.a(\"string\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/profile",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get current user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost/api/users/profile",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"users",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "295"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"127-1znbZEAjtFXyeGGVW1JJqQGxRW0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Jun 2023 12:49:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"email\": \"admin@example.com\",\n    \"status\": \"active\",\n    \"firstName\": \"Admin\",\n    \"lastName\": \"Admin\",\n    \"primaryLanguage\": \"sk\",\n    \"isAdmin\": true,\n    \"createdAt\": \"2023-06-05T12:44:22.916Z\",\n    \"updatedAt\": \"2023-06-05T12:44:22.916Z\",\n    \"deletedAt\": null,\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test if response has a valid status code\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Test if response is valid JSON\r",
+									"pm.test(\"Response is valid JSON\", function () {\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"// Parse the response JSON\r",
+									"const jsonData = pm.response.json();\r",
+									"\r",
+									"// Test if 'id' property exists and is a number\r",
+									"pm.test(\"'id' property exists and is a number\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"id\");\r",
+									"    pm.expect(jsonData.id).to.be.a(\"number\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'email' property exists and is a string\r",
+									"pm.test(\"'email' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"email\");\r",
+									"    pm.expect(jsonData.email).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'status' property exists and is a string\r",
+									"pm.test(\"'status' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"status\");\r",
+									"    pm.expect(jsonData.status).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'status' property is either 'active' or 'inactive'\r",
+									"pm.test(\"'status' property is either 'active' or 'inactive'\", function () {\r",
+									"    pm.expect(jsonData.status).to.be.oneOf([\"active\", \"inactive\"]);\r",
+									"});\r",
+									"\r",
+									"// Test if 'firstName' property exists and is a string\r",
+									"pm.test(\"'firstName' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"firstName\");\r",
+									"    pm.expect(jsonData.firstName).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'lastName' property exists and is a string\r",
+									"pm.test(\"'lastName' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"lastName\");\r",
+									"    pm.expect(jsonData.lastName).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'isAdmin' property exists and is a boolean\r",
+									"pm.test(\"'isAdmin' property exists and is a boolean\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"isAdmin\");\r",
+									"    pm.expect(jsonData.isAdmin).to.be.a(\"boolean\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'createdAt' property exists and is a string\r",
+									"pm.test(\"'createdAt' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"createdAt\");\r",
+									"    pm.expect(jsonData.createdAt).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Test if 'updatedAt' property exists and is a string\r",
+									"pm.test(\"'updatedAt' property exists and is a string\", function () {\r",
+									"    pm.expect(jsonData).to.have.property(\"updatedAt\");\r",
+									"    pm.expect(jsonData.updatedAt).to.be.a(\"string\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Admin\",\r\n    \"lastName\": \"Admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit user",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Frank\",\r\n    \"lastName\": \"Donald\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/api/users/:id",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "230"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e6-e9WVtWjGLSX5Ovs+YkYINR+mPOw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Jun 2023 12:50:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"email\": \"admin@example.com\",\n    \"status\": \"active\",\n    \"firstName\": \"Frank\",\n    \"lastName\": \"Donald\",\n    \"isAdmin\": true,\n    \"createdAt\": \"2023-06-05T12:44:22.916Z\",\n    \"updatedAt\": \"2023-06-05T12:49:47.118Z\",\n    \"deletedAt\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test if response has a valid status code\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{newUserId}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost/api/users/:id",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.3"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jul 2024 15:32:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3c-AbNYtN6UlTzihsdV98DETke1dNM\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"name\": \"Not Found\",\n    \"message\": \"User not found\"\n}"
+						},
+						{
+							"name": "Remove user",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{newUserId}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.3"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jul 2024 15:34:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
