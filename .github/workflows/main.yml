@@ -1,0 +1,71 @@
+name: Main
+on: [push]
+jobs:
+
+  # Setup job
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: ./app/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./app
+
+  # Lint job
+  lint:
+    name: Lint
+    needs: [setup]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: ./app/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./app
+      - name: Lint
+        run: npm run eslint
+        working-directory: ./app
+
+  # Test job
+  test:
+    name: Test
+    needs: [setup]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: ./app/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./app
+      - name: Run app
+        run: docker compose -f docker-compose.yml up --build -d
+      - name: Wait for app start
+        run: |
+          URL="http://localhost/api/health";
+          while [ "$(curl -s -o /dev/null -w '%{http_code}' $URL)" -ne 200 ]; do sleep 2; done;
+        timeout-minutes: 5
+      - name: Run tests
+        run: npm run test
+        working-directory: ./app
+      - name: Stop app
+        run: docker compose -f docker-compose.yml down
